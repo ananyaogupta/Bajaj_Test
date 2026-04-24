@@ -1,0 +1,36 @@
+
+
+**Ananya Gupta | RA2311003011218**
+
+---
+
+## What this is
+
+My submission for the Bajaj Finserv Health Java qualifier. The problem involved polling a quiz API 10 times, filtering out repeated event data, and submitting a sorted leaderboard once at the end.
+
+---
+
+## Running it
+
+No external libraries needed, plain Java is enough.
+
+**Compile:**
+```
+javac QuizLeaderboard.java
+```
+
+**Run:**
+```
+java QuizLeaderboard
+```
+
+Takes roughly 45–50 seconds to complete because there's a mandatory 5 second gap between each API call.
+
+
+The tricky part of this problem is that the API can return the same event data in multiple polls. If you add scores every time without checking, your total ends up wrong.
+
+To fix this I track every event using a key made from `roundId + participant`. I store all seen keys in a `HashSet`. If the same key shows up again I ignore that event. Only new events get added to the score map.
+
+Once all 10 polls finish, the map is sorted high to low by score and submitted as JSON to the submit endpoint. The JSON is built manually in a `StringBuilder` — no third party library involved.
+
+
