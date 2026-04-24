@@ -1,17 +1,10 @@
 
 
-**Ananya Gupta | RA2311003011218**
-
----
-
+Ananya Gupta | RA2311003011218*
 ## What this is
-
 My submission for the Bajaj Finserv Health Java qualifier. The problem involved polling a quiz API 10 times, filtering out repeated event data, and submitting a sorted leaderboard once at the end.
-
 ---
-
 ## Running it
-
 No external libraries needed, plain Java is enough.
 
 **Compile:**
